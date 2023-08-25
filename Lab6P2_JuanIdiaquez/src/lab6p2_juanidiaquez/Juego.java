@@ -17,8 +17,8 @@ public class Juego {
     Date Fecha;
     double Precio;
     String Estado;
-    Boolean Rentable;
-    Boolean Agregado;
+    String Rentable;
+    String Agregado;
     int CantD; 
 
     public String getNombre() {
@@ -41,11 +41,11 @@ public class Juego {
         return Estado;
     }
 
-    public Boolean getRentable() {
+    public String getRentable() {
         return Rentable;
     }
 
-    public Boolean getAgregado() {
+    public String getAgregado() {
         return Agregado;
     }
 
@@ -73,11 +73,11 @@ public class Juego {
         this.Estado = Estado;
     }
 
-    public void setRentable(Boolean Rentable) {
+    public void setRentable(String Rentable) {
         this.Rentable = Rentable;
     }
 
-    public void setAgregado(Boolean Agregado) {
+    public void setAgregado(String Agregado) {
         this.Agregado = Agregado;
     }
 
@@ -88,7 +88,7 @@ public class Juego {
     public Juego() {
     }
 
-    public Juego(String Nombre, String Descripcion, Date Fecha, double Precio, String Estado, Boolean Rentable, Boolean Agregado, int CantD) {
+    public Juego(String Nombre, String Descripcion, Date Fecha, double Precio, String Estado, String Rentable, String Agregado, int CantD) {
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
         this.Fecha = Fecha;
