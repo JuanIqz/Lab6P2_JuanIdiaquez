@@ -6,7 +6,10 @@ package lab6p2_juanidiaquez;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,9 +37,7 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
         Botones2 = new javax.swing.ButtonGroup();
         Botones3 = new javax.swing.ButtonGroup();
         Botones4 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane5 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
+        PopUpAgregarJuego = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -59,8 +60,13 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
         RentableNo = new javax.swing.JRadioButton();
         AgregadoSi = new javax.swing.JRadioButton();
         AgregadoNo = new javax.swing.JRadioButton();
-        jLabel18 = new javax.swing.JLabel();
-        ComboAgregarJuego = new javax.swing.JComboBox<>();
+        PopUpListaJuegos = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ListaJuegos = new javax.swing.JList<>();
+        BotonJuegosListaJuegos = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -79,11 +85,8 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
         BotonAgregarConsola = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        TablaPortatiles = new javax.swing.JTable();
+        SeleccionarListar = new javax.swing.JButton();
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -168,127 +171,175 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
         AgregadoNo.setText("no");
         AgregadoNo.setToolTipText("");
 
-        jLabel18.setText("Consola");
-
-        ComboAgregarJuego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout PopUpAgregarJuegoLayout = new javax.swing.GroupLayout(PopUpAgregarJuego.getContentPane());
+        PopUpAgregarJuego.getContentPane().setLayout(PopUpAgregarJuegoLayout);
+        PopUpAgregarJuegoLayout.setHorizontalGroup(
+            PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
+                        .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(18, 18, 18)
                                 .addComponent(PrecioAgregarJ))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
+                                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel18)
-                                        .addComponent(jLabel10)))
+                                    .addComponent(jLabel10))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NombreAgregarJ)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(ComboAgregarJuego, 0, 193, Short.MAX_VALUE)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NombreAgregarJ, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
                                 .addComponent(FechaAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
                                 .addComponent(AgregadoSi)
                                 .addGap(18, 18, 18)
                                 .addComponent(AgregadoNo))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel17)
                                 .addGap(18, 18, 18)
                                 .addComponent(CantidadDAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                         .addComponent(BotonAgregarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
+                        .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addGap(36, 36, 36))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addGap(26, 26, 26)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(RentableSi)
                                 .addGap(18, 18, 18)
                                 .addComponent(RentableNo))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                                 .addComponent(BotonNuevoAgregarJ)
                                 .addGap(18, 18, 18)
                                 .addComponent(BotonUsadoAgregarJ)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PopUpAgregarJuegoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(283, 283, 283))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        PopUpAgregarJuegoLayout.setVerticalGroup(
+            PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(ComboAgregarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(40, 40, 40)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(NombreAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(FechaAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(PrecioAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(BotonNuevoAgregarJ)
                     .addComponent(BotonUsadoAgregarJ))
                 .addGap(46, 46, 46)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(RentableSi)
                     .addComponent(RentableNo))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PopUpAgregarJuegoLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
                             .addComponent(AgregadoSi)
                             .addComponent(AgregadoNo))
                         .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PopUpAgregarJuegoLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonAgregarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(PopUpAgregarJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(CantidadDAgregarJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
 
-        jTabbedPane5.addTab("Agregar Juego", jPanel3);
+        ListaJuegos.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(ListaJuegos);
+
+        BotonJuegosListaJuegos.setText("Select");
+        BotonJuegosListaJuegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonJuegosListaJuegosMouseClicked(evt);
+            }
+        });
+        BotonJuegosListaJuegos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonJuegosListaJuegosActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Lista de Juegos");
+
+        javax.swing.GroupLayout PopUpListaJuegosLayout = new javax.swing.GroupLayout(PopUpListaJuegos.getContentPane());
+        PopUpListaJuegos.getContentPane().setLayout(PopUpListaJuegosLayout);
+        PopUpListaJuegosLayout.setHorizontalGroup(
+            PopUpListaJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpListaJuegosLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addComponent(BotonJuegosListaJuegos, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PopUpListaJuegosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(195, 195, 195))
+        );
+        PopUpListaJuegosLayout.setVerticalGroup(
+            PopUpListaJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpListaJuegosLayout.createSequentialGroup()
+                .addGroup(PopUpListaJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PopUpListaJuegosLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PopUpListaJuegosLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(148, 148, 148)
+                        .addComponent(BotonJuegosListaJuegos, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("ID");
@@ -376,7 +427,7 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
                         .addComponent(ModeloAgregarConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonAgregarConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -387,7 +438,7 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(BotonPortatil)
@@ -419,64 +470,53 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Agregar consola ", jPanel4);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaPortatiles.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Fabricante", "Años de uso", "Precio", "Modelo", "Tipo"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(TablaPortatiles);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        SeleccionarListar.setText("Seleccionar");
+        SeleccionarListar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SeleccionarListarMouseClicked(evt);
+            }
         });
-        jScrollPane3.setViewportView(jList1);
+        SeleccionarListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeleccionarListarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(SeleccionarListar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(SeleccionarListar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
-        jTabbedPane5.addTab("Listar", jPanel5);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane5))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane5)
-                .addContainerGap())
-        );
+        jTabbedPane5.addTab("ListarPortatiles", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -484,6 +524,8 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jTabbedPane5)
+                .addGap(92, 92, 92)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -491,24 +533,17 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTabbedPane5)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(574, 574, 574))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ModeloAgregarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModeloAgregarConsolaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ModeloAgregarConsolaActionPerformed
-
-    private void PrecioAgregarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecioAgregarConsolaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PrecioAgregarConsolaActionPerformed
-
-    private void BotonPortatilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPortatilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonPortatilActionPerformed
 
     private void BotonAgregarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarJuegoActionPerformed
         // TODO add your handling code here:
@@ -559,12 +594,113 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
         }
         String CantD= CantidadDAgregarJ.getText();
         int CantidadDisponible= Integer.parseInt(CantD);
+        int pos= TablaPortatiles.getSelectedRow();
+        Consolas.get(pos).getJuegos().add((new Juego(nombre, descripcion, fecha, precio, estado, rentabilidad, Agregado, CantidadDisponible)));
+
+          if (Consolas.get(pos).getJuegos().size()>0) {
+                    DefaultListModel m
+                = (DefaultListModel) ListaJuegos.getModel();
+        for (int i = 0; i < Consolas.get(pos).getJuegos().size(); i++) {
+            m.addElement(Consolas.get(pos).getJuegos().get(i));
+        }
+        }
+ 
+        
+       
         JOptionPane.showMessageDialog(this, "Juego Agregado");
     }//GEN-LAST:event_BotonAgregarJuegoMouseClicked
 
     private void BotonAgregarConsolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarConsolaMouseClicked
-        // TODO add your handling code here:
+        Object[]datos=new Object[6];
+        String id= IdAgregarConsola.getText();
+        int ID= Integer.parseInt(id);
+        String fabricante= FabricanteAgregarConsola.getText();
+        String añoU= AñosAgregarConsola.getText();
+        int AñosUsada= Integer.parseInt(añoU);
+        String pesitos= PrecioAgregarConsola.getText();
+        double precio= Double.parseDouble(pesitos);
+        String modelo=ModeloAgregarConsola.getText();
+        if (BotonPortatil.isSelected()) {
+            String tamañito=JOptionPane.showInputDialog(null, "agregue el tamaño");
+            int tamaño=Integer.parseInt(tamañito);
+            String baterillita=JOptionPane.showInputDialog(null, "Agregue el nivel de la bateria");
+            int bateria= Integer.parseInt(baterillita);
+            String estuche=JOptionPane.showInputDialog(null, "tiene estuche? Marque si o no");
+            Consolas.add(new Portatil(tamaño, bateria, estuche, ID, fabricante, AñosUsada, precio, modelo));
+            DefaultTableModel m=(DefaultTableModel) TablaPortatiles.getModel();
+            for (Consola c : Consolas) {
+                
+                datos[0]=c.getId();
+                datos[1]=c.getFabricante();
+                datos[2]=c.getADU();
+                datos[3]=c.getPrecio();
+                datos[4]=c.getModelo();
+                if (c instanceof Portatil) {
+                    datos[5]="Portatil";
+                }else if (c instanceof Estacionaria) {
+                    datos[5]="Estacionaria";
+                }
+            }
+            m.addRow(datos);
+        }else if (BotonEstacionaria.isSelected()) {
+            String Ncontroles=JOptionPane.showInputDialog(null, "Marque el numero de controles que posee");
+            int NumeroCO=Integer.parseInt(Ncontroles);
+            String almacenamiento=JOptionPane.showInputDialog(null, "Marque el almacenamiento que posee");
+            String TipConex=JOptionPane.showInputDialog(null, "Marque eñ tipo de conexion que tiene");
+            Consolas.add(new Estacionaria(NumeroCO, almacenamiento, TipConex, ID, fabricante, AñosUsada, precio, modelo));
+             DefaultTableModel m=(DefaultTableModel) TablaPortatiles.getModel();
+            for (Consola c : Consolas) {
+                datos[0]=c.getId();
+                datos[1]=c.getFabricante();
+                datos[2]=c.getADU();
+                datos[3]=c.getPrecio();
+                datos[4]=c.getModelo();
+                if (c instanceof Portatil) {
+                    datos[5]="Portatil";
+                }else if (c instanceof Estacionaria) {
+                    datos[5]="Estacionaria";
+                }
+            }
+            m.addRow(datos);
+        }
+        
+        JOptionPane.showMessageDialog(this, "Consola Agregada");
     }//GEN-LAST:event_BotonAgregarConsolaMouseClicked
+
+    private void BotonPortatilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPortatilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonPortatilActionPerformed
+
+    private void ModeloAgregarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModeloAgregarConsolaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ModeloAgregarConsolaActionPerformed
+
+    private void PrecioAgregarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecioAgregarConsolaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrecioAgregarConsolaActionPerformed
+
+    private void SeleccionarListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarListarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SeleccionarListarActionPerformed
+
+    private void SeleccionarListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SeleccionarListarMouseClicked
+
+          PopUpListaJuegos.pack();
+          PopUpListaJuegos.setModal(true);
+          PopUpListaJuegos.setLocationRelativeTo(null);
+          PopUpListaJuegos.setVisible(true);
+    }//GEN-LAST:event_SeleccionarListarMouseClicked
+
+    private void BotonJuegosListaJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJuegosListaJuegosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonJuegosListaJuegosActionPerformed
+
+    private void BotonJuegosListaJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonJuegosListaJuegosMouseClicked
+         PopUpAgregarJuego.pack();
+          PopUpAgregarJuego.setModal(true);
+          PopUpAgregarJuego.setLocationRelativeTo(null);
+          PopUpAgregarJuego.setVisible(true);
+    }//GEN-LAST:event_BotonJuegosListaJuegosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -609,6 +745,7 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
     private javax.swing.JButton BotonAgregarConsola;
     private javax.swing.JButton BotonAgregarJuego;
     private javax.swing.JRadioButton BotonEstacionaria;
+    private javax.swing.JToggleButton BotonJuegosListaJuegos;
     private javax.swing.JRadioButton BotonNuevoAgregarJ;
     private javax.swing.JRadioButton BotonPortatil;
     private javax.swing.JRadioButton BotonUsadoAgregarJ;
@@ -617,16 +754,20 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Botones3;
     private javax.swing.ButtonGroup Botones4;
     private javax.swing.JTextField CantidadDAgregarJ;
-    private javax.swing.JComboBox<String> ComboAgregarJuego;
     private javax.swing.JTextField FabricanteAgregarConsola;
     private com.toedter.calendar.JDateChooser FechaAgregarJ;
     private javax.swing.JTextField IdAgregarConsola;
+    private javax.swing.JList<String> ListaJuegos;
     private javax.swing.JTextField ModeloAgregarConsola;
     private javax.swing.JTextField NombreAgregarJ;
+    private javax.swing.JDialog PopUpAgregarJuego;
+    private javax.swing.JDialog PopUpListaJuegos;
     private javax.swing.JTextField PrecioAgregarConsola;
     private javax.swing.JTextField PrecioAgregarJ;
     private javax.swing.JRadioButton RentableNo;
     private javax.swing.JRadioButton RentableSi;
+    private javax.swing.JButton SeleccionarListar;
+    private javax.swing.JTable TablaPortatiles;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -636,24 +777,21 @@ public class Lab6P2_JuanIdiaquez extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
 ArrayList<Consola>Consolas= new ArrayList();

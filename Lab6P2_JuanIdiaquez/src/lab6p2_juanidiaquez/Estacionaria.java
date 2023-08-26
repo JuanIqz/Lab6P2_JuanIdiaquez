@@ -13,14 +13,14 @@ import java.util.ArrayList;
 public class Estacionaria extends Consola{
     
     int NControles;
-    int Almacenamiento;
+    String Almacenamiento;
     String Tconecciones;
 
     public int getNControles() {
         return NControles;
     }
 
-    public int getAlmacenamiento() {
+    public String getAlmacenamiento() {
         return Almacenamiento;
     }
 
@@ -56,7 +56,7 @@ public class Estacionaria extends Consola{
         this.NControles = NControles;
     }
 
-    public void setAlmacenamiento(int Almacenamiento) {
+    public void setAlmacenamiento(String Almacenamiento) {
         this.Almacenamiento = Almacenamiento;
     }
 
@@ -88,11 +88,14 @@ public class Estacionaria extends Consola{
         this.Modelo = Modelo;
     }
 
-    public Estacionaria(int NControles, int Almacenamiento, String Tconecciones) {
+    public Estacionaria(int NControles, String Almacenamiento, String Tconecciones, int Id, String Fabricante, int ADU, double Precio, String Modelo) {
+        super(Id, Fabricante, ADU, Precio, Modelo);
         this.NControles = NControles;
         this.Almacenamiento = Almacenamiento;
         this.Tconecciones = Tconecciones;
     }
+
+
 
     public Estacionaria() {
     }

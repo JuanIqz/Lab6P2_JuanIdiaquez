@@ -12,13 +12,11 @@ import java.util.ArrayList;
  */
 public class Portatil extends Consola{
     
-    String TamanoP;
+    int TamanoP;
     int Bateria;
-    boolean Estuche;
+    String Estuche;
 
-    public Portatil(int Id, String Fabricante, int ADU, double Precio, String Modelo) {
-        super(Id, Fabricante, ADU, Precio, Modelo);
-    }
+
 
     public int getId() {
         return Id;
@@ -70,7 +68,7 @@ public class Portatil extends Consola{
 
     
     
-    public String getTamanoP() {
+    public int getTamanoP() {
         return TamanoP;
     }
 
@@ -78,11 +76,11 @@ public class Portatil extends Consola{
         return Bateria;
     }
 
-    public boolean isEstuche() {
+    public String isEstuche() {
         return Estuche;
     }
 
-    public void setTamanoP(String TamanoP) {
+    public void setTamanoP(int TamanoP) {
         this.TamanoP = TamanoP;
     }
 
@@ -90,18 +88,21 @@ public class Portatil extends Consola{
         this.Bateria = Bateria;
     }
 
-    public void setEstuche(boolean Estuche) {
+    public void setEstuche(String Estuche) {
         this.Estuche = Estuche;
     }
 
     public Portatil() {
     }
 
-    public Portatil(String TamanoP, int Bateria, boolean Estuche) {
+    public Portatil(int TamanoP, int Bateria, String Estuche, int Id, String Fabricante, int ADU, double Precio, String Modelo) {
+        super(Id, Fabricante, ADU, Precio, Modelo);
         this.TamanoP = TamanoP;
         this.Bateria = Bateria;
         this.Estuche = Estuche;
     }
+
+
 
     @Override
     public String toString() {
